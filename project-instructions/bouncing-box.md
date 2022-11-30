@@ -758,7 +758,7 @@ RGB colors are a combination of 3 numbers that each range from 0 to 255. The fir
     * To generate a random number between 0 and 10, you can use the `Math.random()` Function like so:
 
       ```js
-      var randomNumberBetween0and10 = Math.random() * 10;
+      ç;
       ```
 
 * How would you modify this so that you generate a random number between 0 and 255?
