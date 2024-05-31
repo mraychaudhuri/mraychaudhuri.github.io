@@ -30,7 +30,8 @@ var background = function (window) {
         //////////////////////////////////////////////////////////////////
         // TODO (several):
       
-      
+        var tree; 
+        
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
@@ -50,6 +51,15 @@ var background = function (window) {
             moon.scaleX = 0.3;
             moon.scaleY = 0.3;
             background.addChild(moon);
+
+            for (var i = 0; i <= 150; i++){
+                var star = draw.bitmap("img/256px-Black_star.png");
+                star.x = canvasWidth * Math.random();
+                star.y = groundY * Math.random();
+                star.scaleX = 0.03
+                star.scaleY = 0.03
+                background.addChild(star)
+            }
             
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
