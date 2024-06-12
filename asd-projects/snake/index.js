@@ -53,7 +53,7 @@ function init() {
     makeApple();
   // TODO 5a: Initialize the interval
     // start update interval
-    updateInterval = setInterval(update, 100);
+    updateInterval = setInterval(update, 200);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -113,10 +113,10 @@ function moveSnake() {
   for (var i = snake.body.length - 1; i > 0; i-- /* code to loop through the indexes of the snake.body Array*/ ) {
     var snakeSquare = snake.body[i];
 
-    var nextSnakeSquare = snake.body[i] + 1;
-    var nextRow = snake.body[i].row;
-    var nextColumn = snake.body[i].column;
-    var nextDirection = snake.body[i].direction;
+    var nextSnakeSquare = snake.body[i-1];
+    var nextRow = nextSnakeSquare.row;
+    var nextColumn = nextSnakeSquare.column;
+    var nextDirection = nextSnakeSquare.direction;
 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
@@ -231,7 +231,11 @@ function hasCollidedWithSnake() {
   head and each part of the snake's body also knows its own row and column.
   
   */
-
+  for (var i = 1; i < snake.body.length; i++){
+    if (snake.head.row === snake.body[i].row && snake.head.column === snake.body[i].column){
+      return true;
+    }
+  }
   return false;
 }
 
@@ -341,15 +345,23 @@ function getRandomAvailablePosition() {
 
   /* Generate random positions until one is found that doesn't overlap with the snake */
   while (!spaceIsAvailable) {
+    
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
+    for (var i = 0; i < snake.body.length; i++){
+      if (snake.body[i].column === randomPosition.column && snake.body[i].row === randomPosition.row){
+        spaceIsAvailable = false;
+      } 
+    }
+    
 
     /*
     TODO 13: After generating the random position determine if that position is
     not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
+   
   }
 
   return randomPosition;

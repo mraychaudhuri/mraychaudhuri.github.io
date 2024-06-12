@@ -477,7 +477,7 @@ Our program is still not working properly. When our snake eats an apple, a new s
 
 ```javascript
 for ( /* code to loop through the indexes of the snake.body Array*/ ) {
-    var snakeSquare = "???";
+    var snakeSquare = snake.head;
 
     var nextSnakeSquare = "???";
     var nextRow = "???";
