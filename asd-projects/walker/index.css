@@ -1,18 +1,24 @@
 
 body {
-  background-color: darkgreen;
+  background-color: rgb(0, 65, 100);
 }
 
 #board {
   width: 440px;
   height: 440px;
-  border: 1px solid white;
+  border: 1px solid rgb(151, 124, 124);
   background-color: black;
   position: relative;
 }
 
+#walker {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(153, 77, 189);
+}
+
 #gameItem {
-  background-color: teal;
+  background-color: rgb(115, 0, 128);
   width: 50px;
   height: 50px;
   position: absolute;
