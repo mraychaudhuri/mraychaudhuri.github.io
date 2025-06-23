@@ -1,0 +1,41 @@
+{
+  "name": "scratch-pad",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A javascript playground",
+  "main": "app.js",
+  "scripts": {
+    "pretest": "npm install",
+    "test": "mocha ./test || :",
+    "posttest": "rm -rf ./test ./node_modules",
+    "prettier": "prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OperationSpark/scratch-pad.git"
+  },
+  "keywords": [
+    "lodown",
+    "functional",
+    "programming",
+    "tdd",
+    "mocha",
+    "chai",
+    "istanbul"
+  ],
+  "author": "jfraboni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OperationSpark/scratch-pad/issues"
+  },
+  "homepage": "https://github.com/OperationSpark/scratch-pad#readme",
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^11.2.2",
+    "prettier": "^3.5.3",
+    "sinon": "^19.0.5"
+  },
+  "dependencies": {
+    "lodash": "^4.4.0"
+  }
+}

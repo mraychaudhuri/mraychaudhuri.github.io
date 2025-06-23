@@ -10,7 +10,14 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-  
+
+  var walker = {
+    x: 0,
+    y: 0,
+    speedX: 0,
+    speedY: 0
+  };
+
   // Game Item Objects
   
   const KEY = {
@@ -33,7 +40,7 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    repositionGameItem();
 
   }
   
@@ -67,6 +74,11 @@ function runProgram(){
 
     // turn off event handlers
     $(document).off();
+  }
+
+  function repositionGameItem(){
+    walker.x = walker.x + walker.speedX
+    walker.y = walker.y + walker.speedY
   }
   
 }

@@ -1,0 +1,15 @@
+language: node_js
+dist: jammy
+node_js:
+  - '22'
+addons:
+  chrome: stable
+  
+notifications:
+  email:
+    - john@operationspark.org
+    - max@operationspark.org
+  slack: operationspark:IVZ9qgp3Ge6RTeSl7nftvktM
+  webhooks: https://greenlight.operationspark.org/api/webhooks/travisci
+  
+
